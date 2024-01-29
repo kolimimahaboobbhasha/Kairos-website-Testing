@@ -102,6 +102,8 @@ public class Kairos_Websites_Testing_ {
         	   test = extent.createTest("Test for URL: " + url);
             driver.get(url);
             Thread.sleep(2000);
+		 String ActualURL=driver.getCurrentUrl();
+            Assert.assertEquals(url, ActualURL);
             // Logging or reporting for each URL
          
            // test.log(Status.INFO, "Navigated to URL: " + url);
