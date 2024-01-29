@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout your source code from version control (e.g., Git)
+                'https://your.git.repo/url.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Perform any build steps if necessary
+                // For example, if you are using a build tool like Maven or Gradle
+                script {
+                   'mvn clean install'
+                }
+            }
+        }
+
+        stage('Run Automation Script') {
+            steps {
+                // Run your automation script
+                script {
+                    'path/to/your/automation/script.sh'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean up or post-build steps, if needed
+        }
+    }
+}
