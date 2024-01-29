@@ -49,6 +49,11 @@ public class Kairos_Websites_Testing_ {
 	String URL;
 	 String Title;
 	 String DateandTime;
+	 static String[] urls= {Website_URLs.Customer_Stories.getURL(),Website_URLs.WhitePaper.getURL(),Website_URLs.Blog.getURL(),Website_URLs.News_letter.getURL(),Website_URLs.Overview.getURL(),Website_URLs.Leadership.getURL(),
+				Website_URLs.Life_at_Kairos.getURL(),Website_URLs.Current_openings.getURL(),Website_URLs.Home_page.getURL(),Website_URLs.Products_KiTAP.getURL(),Website_URLs.DQGateway.getURL()
+				,Website_URLs.API_Testing.getURL(),Website_URLs.Resources.getURL(),Website_URLs.Home_page_footer.getURL(),Website_URLs.Total_Quality_Assurance.getURL(),Website_URLs.Mobile_APP_Testing.getURL(),Website_URLs.Data_Analytics_Testing.getURL(),
+				Website_URLs.Salesforce_Testing.getURL(),Website_URLs.CX_Testing.getURL(),Website_URLs.Regression_Testing_Services.getURL(),Website_URLs.Cloud_Testing.getURL(),Website_URLs.Oracle_solutions.getURL(),Website_URLs.Application_Modernization.getURL(),
+				Website_URLs.Intelligent_RPA.getURL(),Website_URLs.Digital_App_Development.getURL()};
 	@BeforeSuite
 	public void setupExtentReports()
 	{
@@ -82,11 +87,11 @@ public class Kairos_Websites_Testing_ {
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
-		String[] urls = {Website_URLs.Customer_Stories.getURL(),Website_URLs.Blog.getURL(),Website_URLs.Overview.getURL(),
-				Website_URLs.Life_at_Kairos.getURL(),Website_URLs.Home_page.getURL(),Website_URLs.Products_KiTAP.getURL(),Website_URLs.DQGateway.getURL()
-				,Website_URLs.API_Testing.getURL(),Website_URLs.Resources.getURL(),Website_URLs.Home_page_footer.getURL(),Website_URLs.Mobile_APP_Testing.getURL(),Website_URLs.Data_Analytics_Testing.getURL(),
-				Website_URLs.Salesforce_Testing.getURL(),Website_URLs.Regression_Testing_Services.getURL(),Website_URLs.Cloud_Testing.getURL(),Website_URLs.Oracle_solutions.getURL(),Website_URLs.Application_Modernization.getURL(),
-				Website_URLs.Intelligent_RPA.getURL(),Website_URLs.Digital_App_Development.getURL()};
+//		String[] urls = {Website_URLs.Customer_Stories.getURL(),Website_URLs.WhitePaper.getURL(),Website_URLs.Blog.getURL(),Website_URLs.News_letter.getURL(),Website_URLs.Overview.getURL(),Website_URLs.Leadership.getURL(),
+//				Website_URLs.Life_at_Kairos.getURL(),Website_URLs.Current_openings.getURL(),Website_URLs.Home_page.getURL(),Website_URLs.Products_KiTAP.getURL(),Website_URLs.DQGateway.getURL()
+//				,Website_URLs.API_Testing.getURL(),Website_URLs.Resources.getURL(),Website_URLs.Home_page_footer.getURL(),Website_URLs.Total_Quality_Assurance.getURL(),Website_URLs.Mobile_APP_Testing.getURL(),Website_URLs.Data_Analytics_Testing.getURL(),
+//				Website_URLs.Salesforce_Testing.getURL(),Website_URLs.CX_Testing.getURL(),Website_URLs.Regression_Testing_Services.getURL(),Website_URLs.Cloud_Testing.getURL(),Website_URLs.Oracle_solutions.getURL(),Website_URLs.Application_Modernization.getURL(),
+//				Website_URLs.Intelligent_RPA.getURL(),Website_URLs.Digital_App_Development.getURL()};
 
         
         List<String> shuffledUrls = new ArrayList<>(List.of(urls));
@@ -97,16 +102,16 @@ public class Kairos_Websites_Testing_ {
         List<String> selectedUrls = shuffledUrls.subList(0, Math.min(shuffledUrls.size(), 3));
         StringBuilder htmlTable = new StringBuilder("<table border='1'><tr><th>Device</th><th>Device OS</th><th>Browser</th><th>Browser Version</th><th>URL</th><th>Website Page Verified</th><th>Date & Time</th><th>Status</th></tr>");
 
+        
+        System.out.println("Testing Urls");
 
         for (String url : selectedUrls) {
         	   test = extent.createTest("Test for URL: " + url);
             driver.get(url);
             Thread.sleep(2000);
-		 String ActualURL=driver.getCurrentUrl();
+            String ActualURL=driver.getCurrentUrl();
             Assert.assertEquals(url, ActualURL);
-            // Logging or reporting for each URL
-         
-           // test.log(Status.INFO, "Navigated to URL: " + url);
+           
 
            
             test.pass("Page loaded successfully");
@@ -147,22 +152,11 @@ public class Kairos_Websites_Testing_ {
             htmlTable.append("<td>").append(Title).append("</td>");
             htmlTable.append("<td>").append(DateandTime).append("</td>");
             htmlTable.append("<td>").append("Working").append("</td>");
-
-            // Get the current date and time
-       
-
-            // Create a new UrlResult object and add it to the list
-           
              System.out.println(driver.getTitle()+"    URL :"+driver.getCurrentUrl()); // Print the title of the page
              
              Row dataRow = sheet.createRow(rowNum++);
-            
-             
-
-             // Autofit rows
              for (int row = 0; row < sheet.getPhysicalNumberOfRows(); row++) {
                  sheet.autoSizeColumn(row);
-             
              dataRow.createCell(0).setCellValue(Browser);
              dataRow.createCell(1).setCellValue(BrowserVersion);
              dataRow.createCell(2).setCellValue(URL);
@@ -179,7 +173,7 @@ public class Kairos_Websites_Testing_ {
              workbook.write(fileOut);
          }
          EmailAttachment attachment = new EmailAttachment();
-		    attachment.setPath("D:\\MyWorkSpace\\DQG_Workspace\\kairos_website\\test-output\\emailable-report.html");
+		    attachment.setPath("D:\\MyWorkSpace\\DQG_Workspace\\kairos_website\\kairos.xlsx");
 	        attachment.setDisposition(EmailAttachment.ATTACHMENT);
 	        attachment.setDescription("Report of the test execution");
 	   
@@ -216,13 +210,6 @@ public class Kairos_Websites_Testing_ {
 		
 	
 	 public static void checkURLs() {
-	        String[] urls = {Website_URLs.Customer_Stories.getURL(),Website_URLs.Blog.getURL(),Website_URLs.Overview.getURL(),
-					Website_URLs.Life_at_Kairos.getURL(),Website_URLs.Home_page.getURL(),Website_URLs.Products_KiTAP.getURL(),Website_URLs.DQGateway.getURL()
-					,Website_URLs.API_Testing.getURL(),Website_URLs.Resources.getURL(),Website_URLs.Home_page_footer.getURL(),Website_URLs.Mobile_APP_Testing.getURL(),Website_URLs.Data_Analytics_Testing.getURL(),
-					Website_URLs.Salesforce_Testing.getURL(),Website_URLs.Regression_Testing_Services.getURL(),Website_URLs.Cloud_Testing.getURL(),Website_URLs.Oracle_solutions.getURL(),Website_URLs.Application_Modernization.getURL(),
-					Website_URLs.Intelligent_RPA.getURL(),Website_URLs.Digital_App_Development.getURL()
-	        };
-
 	        for (String url : urls) {
 	            try {
 	                URL urlObj = new URL(url);
@@ -232,10 +219,12 @@ public class Kairos_Websites_Testing_ {
 	                int responseCode = connection.getResponseCode();
 	                if (responseCode == HttpURLConnection.HTTP_OK) {
 	                    System.out.println(url + " is reachable.");
+	                   
 	                } else {
 	                    System.out.println(url + " is not reachable. Response Code: " + responseCode);
 	                   
 	                }
+	                
 
 	                connection.disconnect();
 	            } catch (Exception e) {
@@ -243,6 +232,7 @@ public class Kairos_Websites_Testing_ {
 	               
 	            }
 	        }
+	        System.out.println("Total Urls:"+urls.length);
 	    }
 	@AfterSuite
 	public void teardownExtentreports()
@@ -252,4 +242,5 @@ public class Kairos_Websites_Testing_ {
 	}
 	
 	
+
 }
