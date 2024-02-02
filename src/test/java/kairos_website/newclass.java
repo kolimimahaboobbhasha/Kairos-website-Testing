@@ -1,10 +1,10 @@
 package kairos_website;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -14,10 +14,6 @@ import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.MultiPartEmail;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
@@ -26,6 +22,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -63,9 +61,11 @@ public class newclass {
 	@Test
 	public void Websites() throws Throwable
 	{
+		WebDriverManager.edgedriver().setup();
+		WebDriverManager.firefoxdriver().setup();
 		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
-		driver.manage().window().maximize();
+//		driver=new ChromeDriver();
+	
 		String[] urls = {Website_URLs.Customer_Stories.getURL(),Website_URLs.Blog.getURL(),Website_URLs.Overview.getURL(),
 				Website_URLs.Life_at_Kairos.getURL(),Website_URLs.Home_page.getURL(),Website_URLs.Products_KiTAP.getURL(),Website_URLs.DQGateway.getURL()
 				,Website_URLs.API_Testing.getURL(),Website_URLs.Resources.getURL(),Website_URLs.Home_page_footer.getURL(),Website_URLs.Mobile_APP_Testing.getURL(),Website_URLs.Data_Analytics_Testing.getURL(),
@@ -82,8 +82,32 @@ public class newclass {
         StringBuilder htmlTable = new StringBuilder("<table border='1'><tr><th>Device</th><th>Device OS</th><th>Browser</th><th>Browser Version</th><th>URL</th><th>Website Page Verified</th><th>Date & Time</th><th>Status Code</th></tr>");
 
         for (String url : selectedUrls) {
-        	   test = extent.createTest("Test for URL: " + url);
-            driver.get(url);
+            // Iterate through each browser (e.g., Chrome and Firefox)
+            for (String browser : Arrays.asList("chrome", "edge","firefox")) {
+                // Create a new instance of WebDriver based on the current browser
+                WebDriver driver = null;
+            	driver.manage().window().maximize();
+                if (browser.equalsIgnoreCase("chrome")) {
+                    driver = new ChromeDriver();
+                }else if (browser.equalsIgnoreCase("edge")) {
+                    driver = new EdgeDriver();
+                }  
+                else if (browser.equalsIgnoreCase("firefox")) {
+                    driver = new FirefoxDriver();
+                } else {
+                    throw new IllegalArgumentException("Unsupported browser: " + browser);
+                }
+
+                try {
+                    // Create a test with the current URL and browser
+                    test = extent.createTest("Test for URL: " + url + " in " + browser);
+
+                    // Navigate to the URL using the current browser
+                    driver.get(url);
+                } finally {
+                    // Close the WebDriver instance after the test
+                  //  driver.quit();
+                }}
             Thread.sleep(2000);
             WebElement acceptall = driver.findElement(By.xpath("//button[text() ='Accept All']"));
             if(acceptall.isDisplayed())

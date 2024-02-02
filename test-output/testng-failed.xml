@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="kairos_website.CrossBrowsing">
+      <class name="kairos_website.Kairos_Websites_Testing_">
         <methods>
-          <include name="setUpExtentReport"/>
-          <include name="teardown"/>
-          <include name="teardownExtentReport"/>
-          <include name="testGoogle"/>
+          <include name="checkURLsConnection"/>
+          <include name="teardownExtentreports"/>
           <include name="sendEmail"/>
+          <include name="Websites"/>
+          <include name="setupExtentReports"/>
         </methods>
-      </class> <!-- kairos_website.CrossBrowsing -->
+      </class> <!-- kairos_website.Kairos_Websites_Testing_ -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
