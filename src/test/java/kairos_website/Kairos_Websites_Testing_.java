@@ -63,7 +63,7 @@ public class Kairos_Websites_Testing_ {
 	@BeforeMethod
 	public void checkURLsConnection()
 	{
-//		checkURLs();
+		checkURLs();
 	}
 	@Test
 	public void Websites() throws Throwable
