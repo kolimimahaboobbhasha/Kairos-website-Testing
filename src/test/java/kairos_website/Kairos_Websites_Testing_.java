@@ -173,14 +173,14 @@ public class Kairos_Websites_Testing_ {
 	        attachment.setDisposition(EmailAttachment.ATTACHMENT);
 	        attachment.setDescription("Report of the test execution");
 	   
-
-	        Email email = new MultiPartEmail();
+ Email email = new MultiPartEmail();
 	        email.setHostName("smtp.gmail.com");
 	        email.setSmtpPort(587);
-	        email.setAuthenticator(new DefaultAuthenticator("kmbb4578@gmail.com", "Mbbasha123@"));
+	        email.setAuthenticator(new DefaultAuthenticator("kmbb4578@gmail.com", "oqzh ifii yklx zpgn"));
 	        email.setSSLOnConnect(true);
 	        email.setFrom("kmbb4578@gmail.com");
 	        email.setSubject("Kairos Websites Testing");
+	       
 			email.setContent("Hi Team.\r\nKairos Website is Working Fine"+htmlTable ,"text/html");
 	        email.addCc("bhasha.k@kairostech.com");
 	       
