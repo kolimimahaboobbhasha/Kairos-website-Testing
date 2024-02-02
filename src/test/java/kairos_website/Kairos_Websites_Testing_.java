@@ -89,7 +89,7 @@ public class Kairos_Websites_Testing_ {
 		driver.manage().window().maximize();
         List<String> shuffledUrls = new ArrayList<>(List.of(urls));
         Collections.shuffle(shuffledUrls);
-        List<String> selectedUrls = shuffledUrls.subList(0, Math.min(shuffledUrls.size(), 1));
+        List<String> selectedUrls = shuffledUrls.subList(0, Math.min(shuffledUrls.size(), 3));
 //       StringBuilder htmlTable = new StringBuilder("<table border='2';style='border-collapse: collapse; border: 2px solid black;><tr><th>Device</th><th>Device OS</th><th>Browser</th><th>Browser Version</th><th>URL</th><th>Website Page Verified</th><th>Date & Time</th><th>Status</th></tr>");
 //        StringBuilder htmlTable = new StringBuilder("<table style='border-collapse: collapse; border: 2px solid black;'><tr><th>Device</th><th>Device OS</th><th>Browser</th><th>Browser Version</th><th>URL</th><th>Website Page Verified</th><th>Date & Time</th><th>Status</th></tr>");
 //        StringBuilder htmlTable = new StringBuilder("<table border='2' style='border-collapse: collapse; border: 2px solid black; font-weight: bold;'><tr><th>Device</th><th>Device OS</th><th>Browser</th><th>Browser Version</th><th>URL</th><th>Website Page Verified</th><th>Date & Time</th><th>Status</th></tr>");
@@ -175,13 +175,13 @@ public class Kairos_Websites_Testing_ {
 	   
 
 	        Email email = new MultiPartEmail();
-	        email.setHostName("smtp-mail.outlook.com");
+	        email.setHostName("smtp.gmail.com");
 	        email.setSmtpPort(587);
-	        email.setAuthenticator(new DefaultAuthenticator("bhasha.k@kairostech.com", "Mbbasha123@"));
+	        email.setAuthenticator(new DefaultAuthenticator("kmbb4578@gmail.com", "Mbbasha123@"));
 	        email.setSSLOnConnect(true);
-	        email.setFrom("bhasha.k@kairostech.com");
+	        email.setFrom("kmbb4578@gmail.com");
 	        email.setSubject("Kairos Websites Testing");
-			email.setContent("Hi Team.\r\nKairos Websites are Working Fine"+htmlTable ,"text/html");
+			email.setContent("Hi Team.\r\nKairos Website is Working Fine"+htmlTable ,"text/html");
 	        email.addCc("bhasha.k@kairostech.com");
 	       
 	       email.addCc("pranathi.g@kairostech.com");
