@@ -32,7 +32,7 @@ public class JavaUtilities {
 
 	        // Format and print the current date and time
 	        String formattedDateTime = currentDateTime.format(formatter);
-	        System.out.println("Current Date and Time in IST: " + formattedDateTime);
+	      //  System.out.println("Current Date and Time in IST: " + formattedDateTime);
 			return formattedDateTime;
 	    }
 	 

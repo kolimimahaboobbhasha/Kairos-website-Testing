@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-02T16:11:07 IST" name="Default suite" finished-at="2024-02-02T16:11:38 IST" duration-ms="31227">
+  <suite started-at="2024-02-02T17:31:15 IST" name="Default suite" finished-at="2024-02-02T17:31:49 IST" duration-ms="34095">
     <groups>
     </groups>
-    <test started-at="2024-02-02T16:11:07 IST" name="Default test" finished-at="2024-02-02T16:11:38 IST" duration-ms="31227">
+    <test started-at="2024-02-02T17:31:15 IST" name="Default test" finished-at="2024-02-02T17:31:49 IST" duration-ms="34095">
       <class name="kairos_website.Kairos_Websites_Testing_">
-        <test-method is-config="true" signature="setupExtentReports()[pri:0, instance:kairos_website.Kairos_Websites_Testing_@57ad2aa7]" started-at="2024-02-02T16:11:07 IST" name="setupExtentReports" finished-at="2024-02-02T16:11:07 IST" duration-ms="173" status="PASS">
+        <test-method is-config="true" signature="setupExtentReports()[pri:0, instance:kairos_website.Kairos_Websites_Testing_@57ad2aa7]" started-at="2024-02-02T17:31:15 IST" name="setupExtentReports" finished-at="2024-02-02T17:31:15 IST" duration-ms="208" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupExtentReports -->
-        <test-method is-config="true" signature="checkURLsConnection()[pri:0, instance:kairos_website.Kairos_Websites_Testing_@57ad2aa7]" started-at="2024-02-02T16:11:07 IST" name="checkURLsConnection" finished-at="2024-02-02T16:11:07 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="checkURLsConnection()[pri:0, instance:kairos_website.Kairos_Websites_Testing_@57ad2aa7]" started-at="2024-02-02T17:31:15 IST" name="checkURLsConnection" finished-at="2024-02-02T17:31:15 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkURLsConnection -->
-        <test-method signature="Websites()[pri:0, instance:kairos_website.Kairos_Websites_Testing_@57ad2aa7]" started-at="2024-02-02T16:11:07 IST" name="Websites" finished-at="2024-02-02T16:11:38 IST" duration-ms="31194" status="FAIL">
+        <test-method signature="Websites()[pri:0, instance:kairos_website.Kairos_Websites_Testing_@57ad2aa7]" started-at="2024-02-02T17:31:15 IST" name="Websites" finished-at="2024-02-02T17:31:49 IST" duration-ms="34037" status="FAIL">
           <exception class="org.apache.commons.mail.EmailException">
             <message>
               <![CDATA[Sending the email to the following server failed : smtp-mail.outlook.com:465]]>
@@ -82,11 +82,11 @@ at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2175)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Websites -->
-        <test-method is-config="true" signature="sendEmail()[pri:0, instance:kairos_website.Kairos_Websites_Testing_@57ad2aa7]" started-at="2024-02-02T16:11:38 IST" name="sendEmail" finished-at="2024-02-02T16:11:38 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="sendEmail()[pri:0, instance:kairos_website.Kairos_Websites_Testing_@57ad2aa7]" started-at="2024-02-02T17:31:49 IST" name="sendEmail" finished-at="2024-02-02T17:31:49 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sendEmail -->
-        <test-method is-config="true" signature="teardownExtentreports()[pri:0, instance:kairos_website.Kairos_Websites_Testing_@57ad2aa7]" started-at="2024-02-02T16:11:38 IST" name="teardownExtentreports" finished-at="2024-02-02T16:11:39 IST" duration-ms="500" status="PASS">
+        <test-method is-config="true" signature="teardownExtentreports()[pri:0, instance:kairos_website.Kairos_Websites_Testing_@57ad2aa7]" started-at="2024-02-02T17:31:50 IST" name="teardownExtentreports" finished-at="2024-02-02T17:31:50 IST" duration-ms="612" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownExtentreports -->
