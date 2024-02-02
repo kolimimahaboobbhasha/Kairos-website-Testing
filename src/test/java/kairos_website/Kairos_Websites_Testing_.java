@@ -189,8 +189,8 @@ public class Kairos_Websites_Testing_ {
 		email.addCc("prasad.k@kairostech.com");
 	      //  email.addTo("kmahaboobbhasha@gmail.com");
 	     //   email.addTo("mahaboobbhasha17@gmail.com");
-	       // email.addCc("durgaprasad.b@kairostech.com");
-		email.addTo("sandhyarani.mandarapu@gmail.com");
+	       email.addTo("durgaprasad.b@kairostech.com");
+		//email.addTo("sandhyarani.mandarapu@gmail.com");
 	        ((MultiPartEmail) email).attach(attachment);
 	        email.send();
         }
