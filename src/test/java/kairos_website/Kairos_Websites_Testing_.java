@@ -84,12 +84,12 @@ public class Kairos_Websites_Testing_ {
 	    headerRow.createCell(4).setCellValue("Date and Time");
 
 	    int rowNum = 1; // Start from the second row
-		// WebDriverManager.chromedriver().setup();
-		// driver=new ChromeDriver();
+		 WebDriverManager.chromedriver().setup();
+		 driver=new ChromeDriver();
 		   // WebDriverManager.firefoxdriver().setup();
 	    // driver=new FirefoxDriver();
-		   WebDriverManager.edgedriver().setup();
-	    driver=new EdgeDriver();
+		   // WebDriverManager.edgedriver().setup();
+	    // driver=new EdgeDriver();
 		driver.manage().window().maximize();
         List<String> shuffledUrls = new ArrayList<>(List.of(urls));
         Collections.shuffle(shuffledUrls);
