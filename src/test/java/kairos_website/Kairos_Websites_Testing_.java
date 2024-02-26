@@ -24,8 +24,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -87,10 +86,10 @@ public class Kairos_Websites_Testing_ {
 	    int rowNum = 1; // Start from the second row
 //		 WebDriverManager.chromedriver().setup();
 //		 driver=new ChromeDriver();
-	    // WebDriverManager.edgedriver().setup();
-	    // driver=new EdgeDriver();
-		   WebDriverManager.firefoxdriver().setup();
-	    driver=new FirefoxDriver();
+//	    WebDriverManager.edgedriver().setup();
+//	    driver=new EdgeDriver();
+		    WebDriverManager.firefoxdriver().setup();
+	     driver=new FirefoxDriver();
 		   // WebDriverManager.edgedriver().setup();
 	    // driver=new EdgeDriver();
 		driver.manage().window().maximize();
