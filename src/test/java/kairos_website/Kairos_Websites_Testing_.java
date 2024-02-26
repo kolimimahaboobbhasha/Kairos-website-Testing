@@ -87,10 +87,10 @@ public class Kairos_Websites_Testing_ {
 	    int rowNum = 1; // Start from the second row
 //		 WebDriverManager.chromedriver().setup();
 //		 driver=new ChromeDriver();
-	    WebDriverManager.edgedriver().setup();
-	    driver=new EdgeDriver();
-		   // WebDriverManager.firefoxdriver().setup();
-	    // driver=new FirefoxDriver();
+	    // WebDriverManager.edgedriver().setup();
+	    // driver=new EdgeDriver();
+		   WebDriverManager.firefoxdriver().setup();
+	    driver=new FirefoxDriver();
 		   // WebDriverManager.edgedriver().setup();
 	    // driver=new EdgeDriver();
 		driver.manage().window().maximize();
@@ -138,7 +138,7 @@ public class Kairos_Websites_Testing_ {
             String URL = driver.getCurrentUrl();
             String Title = driver.getTitle();
             String DateandTime = javaUtilitis.IST();
-            Capabilities capabilities = ((EdgeDriver) driver).getCapabilities();
+            Capabilities capabilities = ((FirefoxDriver) driver).getCapabilities();
             String Browser = capabilities.getBrowserName();
             String BrowserVersion = capabilities.getBrowserVersion();
             Platform deviceos=capabilities.getPlatformName();
