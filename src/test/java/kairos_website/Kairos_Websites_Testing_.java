@@ -24,7 +24,8 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -84,12 +85,14 @@ public class Kairos_Websites_Testing_ {
 	    headerRow.createCell(4).setCellValue("Date and Time");
 
 	    int rowNum = 1; // Start from the second row
-		 WebDriverManager.chromedriver().setup();
-		 driver=new ChromeDriver();
+//		 WebDriverManager.chromedriver().setup();
+//		 driver=new ChromeDriver();
+	    WebDriverManager.edgedriver().setup();
+	    driver=new EdgeDriver();
 		   // WebDriverManager.firefoxdriver().setup();
 	    // driver=new FirefoxDriver();
-		 WebDriverManager.edgedriver().setup();
-	    driver=new EdgeDriver();
+		   // WebDriverManager.edgedriver().setup();
+	    // driver=new EdgeDriver();
 		driver.manage().window().maximize();
         List<String> shuffledUrls = new ArrayList<>(List.of(urls));
         Collections.shuffle(shuffledUrls);
