@@ -24,7 +24,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -63,7 +63,7 @@ public class Kairos_Websites_Testing_ {
 	@BeforeMethod
 	public void checkURLsConnection()
 	{
-		checkURLs();
+//	checkURLs();
 	}
 	@Test
 	public void Websites() throws Throwable
@@ -101,7 +101,7 @@ public class Kairos_Websites_Testing_ {
 //        StringBuilder htmlTable = new StringBuilder("<table border='2' style='border-collapse: collapse; border: 2px solid black; font-weight: bold;'><tr><th>Device</th><th>Device OS</th><th>Browser</th><th>Browser Version</th><th>URL</th><th>Website Page Verified</th><th>Date & Time</th><th>Status</th></tr>");
 
         StringBuilder htmlTable = new StringBuilder("<table border='2' style='border-collapse: collapse; border: 2px solid black;'>");
-        htmlTable.append("<tr>")
+        htmlTable.append("<tr style='background:#34a1eb;'>")
                 .append("<th style='font-weight: bold;'>Device</th>")
                 .append("<th style='font-weight: bold;'>Device OS</th>")
                 .append("<th style='font-weight: bold;'>Browser</th>")
@@ -131,6 +131,11 @@ public class Kairos_Websites_Testing_ {
             if (!destinationFolder.exists()) {
                 destinationFolder.mkdirs();
             }
+            URL urlObj = new URL(url);
+            HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
+            connection.setRequestMethod("GET");
+            int responseCode = connection.getResponseCode();
+            
             String fileName = "Kairos_website_"+ javaUtilitis.getSystemdate() + ".png";
             File destinationFile = new File(destinationFolder, fileName);
             FileUtils.copyFile(sourceFile, destinationFile);
@@ -146,7 +151,7 @@ public class Kairos_Websites_Testing_ {
 
             //status code
            
-            String status = urls.equals("200") ? "Not Working" : "Working";
+            String status = urls.equals(responseCode) ? "Not Working" : " Working";
             htmlTable.append("<tr>");
             htmlTable.append("<td>").append("Lenovo Thinkpad").append("</td>");
             htmlTable.append("<td>").append(osName).append("</td>");
@@ -155,9 +160,13 @@ public class Kairos_Websites_Testing_ {
             htmlTable.append("<td>").append(URL).append("</td>");
             htmlTable.append("<td>").append(Title).append("</td>");
             htmlTable.append("<td>").append(DateandTime).append("</td>");
-           
-            htmlTable.append("<td>").append(status).append("</td>");
-             System.out.println(driver.getTitle()+":"+driver.getCurrentUrl()); // Print the title of the page
+         
+//            htmlTable.append("<td>").append(status).append("</td>");
+            htmlTable.append("<td style='color: " + (urls.equals(responseCode) ? "red" : "green") + ";'>").append(status).append("</td>");
+            System.out.println(driver.getTitle() + ":" + driver.getCurrentUrl()+responseCode); // Print the title of the page
+//            int statusCode = checkURLs();
+          
+//             System.out.println(driver.getTitle()+":"+driver.getCurrentUrl()); // Print the title of the page
              
              Row dataRow = sheet.createRow(rowNum++);
              for (int row = 0; row < sheet.getPhysicalNumberOfRows(); row++) {
@@ -192,10 +201,10 @@ public class Kairos_Websites_Testing_ {
 	       
 	       email.addCc("pranathi.g@kairostech.com");
 		//email.addCc("kmahaboobbhasha@gmail.com");
-		email.addCc("prasad.k@kairostech.com");
+//		email.addCc("prasad.k@kairostech.com");
 	      //  email.addTo("kmahaboobbhasha@gmail.com");
 	     //   email.addTo("mahaboobbhasha17@gmail.com");
-	       email.addTo("durgaprasad.b@kairostech.com");
+//	       email.addTo("durgaprasad.b@kairostech.com");
 		//email.addTo("sandhyarani.mandarapu@gmail.com");
 	        ((MultiPartEmail) email).attach(attachment);
 	        email.send();
@@ -216,10 +225,10 @@ public class Kairos_Websites_Testing_ {
 	                URL urlObj = new URL(url);
 	                HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
 	                connection.setRequestMethod("GET");
-
 	                int responseCode = connection.getResponseCode();
 	                if (responseCode == HttpURLConnection.HTTP_OK) {
-	                    System.out.println(url + " is reachable.");
+//	                    System.out.println(url + " is reachable.");
+	                    System.out.println(url+"  Status Code :"+responseCode + " is reachable.");
 	                   
 	                } else {
 	                    System.out.println(url + " is not reachable. Response Code: " + responseCode);
