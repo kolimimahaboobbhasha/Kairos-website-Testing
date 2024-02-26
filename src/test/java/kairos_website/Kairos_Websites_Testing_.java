@@ -196,7 +196,7 @@ public class Kairos_Websites_Testing_ {
 	        email.setAuthenticator(new DefaultAuthenticator("kmbb4578@gmail.com", "oqzh ifii yklx zpgn"));
 	        email.setSSLOnConnect(true);
 	        email.setFrom("kmbb4578@gmail.com");
-	        email.setSubject("Kairos Websites Testing");
+	        email.setSubject("Kairos Website Testing");
 	       
 			email.setContent("Hi Team.\r\nKairos Website is Working Fine"+htmlTable ,"text/html");
 	        email.addCc("bhasha.k@kairostech.com");
