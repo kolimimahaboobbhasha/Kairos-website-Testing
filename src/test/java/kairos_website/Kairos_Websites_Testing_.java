@@ -193,7 +193,7 @@ public class Kairos_Websites_Testing_ {
  Email email = new MultiPartEmail();
 	        email.setHostName("smtp.gmail.com");
 	        email.setSmtpPort(587);
-	        email.setAuthenticator(new DefaultAuthenticator("kmbb4578@gmail.com", "oyam cpei iupp eyps"));
+	        email.setAuthenticator(new DefaultAuthenticator("kmbb4578@gmail.com", "arpr tkuo rsxc ruzr"));
 	        email.setSSLOnConnect(true);
 	        email.setFrom("kmbb4578@gmail.com");
 	        email.setSubject("Kairos Website Testing");
