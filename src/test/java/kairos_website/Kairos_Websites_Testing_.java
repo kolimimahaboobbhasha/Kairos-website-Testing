@@ -10,9 +10,7 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.mail.DefaultAuthenticator;
-import org.apache.commons.mail.Email;
-import org.apache.commons.mail.EmailAttachment;
-import org.apache.commons.mail.MultiPartEmail;
+import org.apache.commons.mail.HtmlEmail;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -180,36 +178,40 @@ public class Kairos_Websites_Testing_ {
              dataRow.createCell(4).setCellValue(DateandTime);
              }
              htmlTable.append("</tr>");
-             
-         }
+        }
+             HtmlEmail email = new HtmlEmail();
+             email.setHostName("smtp.gmail.com"); // Set your SMTP server
+             email.setSmtpPort(587); // Set your SMTP port
+             email.setAuthenticator(new DefaultAuthenticator("kmbb4578@gmail.com", "arpr tkuo rsxc ruzr")); // Set your email credentials
+             email.setSSLOnConnect(true); // Enable SSL (if required)
+
+             email.setFrom("kmbb4578@gmail.com");
+             email.setSubject("Kairos Website Testing Report");
+
+         
+
+             // Embed the HTML table into the email
+            // email.setHtmlMsg(htmlTable.toString());
+             StringBuilder emailContent = new StringBuilder("Hi Team.\r\nKairos Websites are Working Fine");
+             emailContent.append(htmlTable);
+     		email.setContent("Hi Team.\r\nKairos Websites are Working Fine"+htmlTable ,"text/html");
+     		 email.addCc("bhasha.k@kairostech.com");
+  	       
+  	       email.addCc("pranathi.g@kairostech.com");
+  		//email.addCc("kmahaboobbhasha@gmail.com");
+  	email.addCc("prasad.k@kairostech.com");
+  	      //  email.addTo("kmahaboobbhasha@gmail.com");
+  	     //   email.addTo("mahaboobbhasha17@gmail.com");
+  	email.addTo("durgaprasad.b@kairostech.com");
+
+             // Send the email
+             email.send();
+
+         
          try (FileOutputStream fileOut = new FileOutputStream("D:\\MyWorkSpace\\DQG_Workspace\\kairos_website\\kairos.xlsx")) {
              workbook.write(fileOut);
          }
-         EmailAttachment attachment = new EmailAttachment();
-		    attachment.setPath("D:\\MyWorkSpace\\DQG_Workspace\\kairos_website\\kairos.xlsx");
-	        attachment.setDisposition(EmailAttachment.ATTACHMENT);
-	        attachment.setDescription("Report of the test execution");
-	   
- Email email = new MultiPartEmail();
-	        email.setHostName("smtp.gmail.com");
-	        email.setSmtpPort(587);
-	        email.setAuthenticator(new DefaultAuthenticator("kmbb4578@gmail.com", "arpr tkuo rsxc ruzr"));
-	        email.setSSLOnConnect(true);
-	        email.setFrom("kmbb4578@gmail.com");
-	        email.setSubject("Kairos Website Testing");
-	       
-			email.setContent("Hi Team.\r\nKairos Website is Working Fine"+htmlTable ,"text/html");
-	        email.addCc("bhasha.k@kairostech.com");
-	       
-	       email.addCc("pranathi.g@kairostech.com");
-		//email.addCc("kmahaboobbhasha@gmail.com");
-	email.addCc("prasad.k@kairostech.com");
-	      //  email.addTo("kmahaboobbhasha@gmail.com");
-	     //   email.addTo("mahaboobbhasha17@gmail.com");
-	email.addTo("durgaprasad.b@kairostech.com");
-		//email.addTo("sandhyarani.mandarapu@gmail.com");
-	        ((MultiPartEmail) email).attach(attachment);
-	        email.send();
+       
         }
 	
 	@AfterMethod
