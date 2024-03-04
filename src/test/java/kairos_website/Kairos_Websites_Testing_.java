@@ -198,9 +198,9 @@ public class Kairos_Websites_Testing_ {
      		 email.addCc("bhasha.k@kairostech.com");
   	       
   	       email.addCc("pranathi.g@kairostech.com");
-  		//email.addCc("kmahaboobbhasha@gmail.com");
+  		email.addCc("kmahaboobbhasha@gmail.com");
   	email.addCc("prasad.k@kairostech.com");
-  	        email.addTo("kmahaboobbhasha@gmail.com");
+  	        // email.addTo("kmahaboobbhasha@gmail.com");
   	     //   email.addTo("mahaboobbhasha17@gmail.com");
   	email.addTo("durgaprasad.b@kairostech.com");
 
