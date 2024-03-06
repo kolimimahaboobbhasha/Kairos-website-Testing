@@ -193,9 +193,9 @@ public class Kairos_Websites_Testing_ {
              emailContent.append(htmlTable);
      		email.setContent("Hi Team.\r\nKairos Websites are Working Fine"+htmlTable ,"text/html");
      		 email.addCc("bhasha.k@kairostech.com");
-  	       email.addTo("kmahaboobbhasha@gmail.com");
+  	       // email.addTo("kmahaboobbhasha@gmail.com");
   	       email.addCc("pranathi.g@kairostech.com");
-  		//email.addCc("kmahaboobbhasha@gmail.com");
+  		email.addCc("kmahaboobbhasha@gmail.com");
 		email.addCc("prasad.k@kairostech.com");
   	      //  email.addTo("kmahaboobbhasha@gmail.com");
   	     //   email.addTo("mahaboobbhasha17@gmail.com");
