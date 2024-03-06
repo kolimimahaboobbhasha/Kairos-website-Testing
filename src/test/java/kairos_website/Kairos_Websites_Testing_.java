@@ -187,23 +187,19 @@ public class Kairos_Websites_Testing_ {
 
              email.setFrom("kmbb4578@gmail.com");
              email.setSubject("Kairos Website Testing Report");
-
-         
-
              // Embed the HTML table into the email
             // email.setHtmlMsg(htmlTable.toString());
              StringBuilder emailContent = new StringBuilder("Hi Team.\r\nKairos Websites are Working Fine");
              emailContent.append(htmlTable);
      		email.setContent("Hi Team.\r\nKairos Websites are Working Fine"+htmlTable ,"text/html");
      		 email.addCc("bhasha.k@kairostech.com");
-  	       
+  	       email.addTo("kmahaboobbhasha@gmail.com");
   	       email.addCc("pranathi.g@kairostech.com");
-  		email.addCc("kmahaboobbhasha@gmail.com");
-		 System.out.println("kmahaboobbhasha@gmail.com");
-  	email.addCc("prasad.k@kairostech.com");
-  	        // email.addTo("kmahaboobbhasha@gmail.com");
+  		//email.addCc("kmahaboobbhasha@gmail.com");
+//  	email.addCc("prasad.k@kairostech.com");
+  	      //  email.addTo("kmahaboobbhasha@gmail.com");
   	     //   email.addTo("mahaboobbhasha17@gmail.com");
-  	email.addTo("durgaprasad.b@kairostech.com");
+//  	email.addTo("durgaprasad.b@kairostech.com");
 
              // Send the email
              email.send();
