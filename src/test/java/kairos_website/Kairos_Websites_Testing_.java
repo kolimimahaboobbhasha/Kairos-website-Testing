@@ -191,7 +191,7 @@ public class Kairos_Websites_Testing_ {
             // email.setHtmlMsg(htmlTable.toString());
              StringBuilder emailContent = new StringBuilder("Hi Team.\r\nKairos Websites are Working Fine");
              emailContent.append(htmlTable);
-     		email.setContent("Hi Team.\r\nKairos Websites are Working Fine"+htmlTable ,"text/html");
+     		email.setContent("Hi Team.\r\nKairos Website is Working Fine"+htmlTable ,"text/html");
      		 email.addCc("bhasha.k@kairostech.com");
   	       // email.addTo("kmahaboobbhasha@gmail.com");
   	       email.addCc("pranathi.g@kairostech.com");
