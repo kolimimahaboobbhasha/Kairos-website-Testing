@@ -359,7 +359,30 @@ public class Kairos_Websites_Testing_ {
 	                connection.disconnect();
 	            } catch (Exception e) {
 	                System.out.println(url + " is not reachable. Exception: " + e.getMessage());
-	               
+	                 TakesScreenshot screenshot = (TakesScreenshot) driver;
+	                File sourceFile = screenshot.getScreenshotAs(OutputType.FILE);
+	                File destinationFolder = new File("C://DQG//Kairoswebsites//Reports//ScreenShots//failedUrls");
+	                if (!destinationFolder.exists()) {
+	                    destinationFolder.mkdirs();
+	                }
+	                fileName += "_" + javaUtilitis.getSystemdate() + ".png";
+	                File destinationFile = new File(destinationFolder, fileName);
+	                FileUtils.copyFile(sourceFile, destinationFile);
+	                HtmlEmail email = new HtmlEmail();
+	                email.setHostName("smtp.gmail.com");
+	                email.setSmtpPort(587);
+	                email.setAuthenticator(new DefaultAuthenticator("kmbb4578@gmail.com", "ntto lwsv rfwa plhk"));
+	                email.setSSLOnConnect(true);
+
+	                email.setFrom("kmbb4578@gmail.com");
+	                email.setSubject("Kairos Website Testing Report Error");
+	                email.setContent("Hi Team.\r\nKairos Website is not working:<br>" +url + " is not reachable.Exception: "+ e.getMessage(), "text/html");
+	                email.addCc("prasad.k@kairostech.com");
+	    	        email.addCc("bhasha.k@kairostech.com");
+	    	        email.addCc("pranathi.g@kairostech.com");
+	                email.addCc("kmahaboobbhasha@gmail.com");
+	     	      	email.addTo("durgaprasad.b@kairostech.com");
+	                email.send();
 	            }
 	        }
 	        System.out.println("Total Urls:"+urls.length);
