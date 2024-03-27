@@ -189,7 +189,7 @@ public class Kairos_Websites_Testing_ {
              email.setSubject("Kairos Website Testing Report");
              // Embed the HTML table into the email
             // email.setHtmlMsg(htmlTable.toString());
-             StringBuilder emailContent = new StringBuilder("Hi Team.\r\nKairos Websites are Working Fine");
+             StringBuilder emailContent = new StringBuilder("Hi Team.\r\nKairos Website is Working Fine");
              emailContent.append(htmlTable);
      		email.setContent("Hi Team.\r\nKairos Websites are Working Fine"+htmlTable ,"text/html");
      		  email.addCc("prasad.k@kairostech.com");
