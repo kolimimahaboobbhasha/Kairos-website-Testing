@@ -330,7 +330,7 @@ public class Kairos_Websites_Testing_ {
 	        email.addCc("prasad.k@kairostech.com");
 	        email.addCc("bhasha.k@kairostech.com");
 	        email.addCc("pranathi.g@kairostech.com");
-            email.addCc("kmahaboobbhasha@gmail.com");
+           email.addCc("kmahaboobbhasha@gmail.com");
  	      	email.addTo("durgaprasad.b@kairostech.com");
 
 	        email.send();
@@ -341,6 +341,7 @@ public class Kairos_Websites_Testing_ {
 	public void sendEmail() throws Throwable{
 	
 //	        test.pass("Email sent successfully");
+		
 
 	}
 		
@@ -373,7 +374,9 @@ public class Kairos_Websites_Testing_ {
 	@AfterSuite
 	public void teardownExtentreports()
 	{
+		driver.close();
 		 driver.quit();
+		 
 		extent.flush();
 	}
 	
