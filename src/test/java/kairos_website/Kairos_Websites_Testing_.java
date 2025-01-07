@@ -82,12 +82,12 @@ public class Kairos_Websites_Testing_ {
 	    headerRow.createCell(4).setCellValue("Date and Time");
 
 	    int rowNum = 1; // Start from the second row
-//		 WebDriverManager.chromedriver().setup();
-//		 driver=new ChromeDriver();
+		 WebDriverManager.chromedriver().setup();
+		  driver=new ChromeDriver();
 //	    WebDriverManager.edgedriver().setup();
 //	    driver=new EdgeDriver();
-		    WebDriverManager.firefoxdriver().setup();
-	     driver=new FirefoxDriver();
+    // WebDriverManager.firefoxdriver().setup();
+	     // driver=new FirefoxDriver();
 		   // WebDriverManager.edgedriver().setup();
 	    // driver=new EdgeDriver();
 		driver.manage().window().maximize();
@@ -192,14 +192,17 @@ public class Kairos_Websites_Testing_ {
              StringBuilder emailContent = new StringBuilder("Hi Team.\r\nKairos Website is Working Fine");
              emailContent.append(htmlTable);
      		email.setContent("Hi Team.\r\nKairos Website is Working Fine"+htmlTable ,"text/html");
-     		  email.addCc("prasad.k@kairostech.com");
+     		  // email.addCc("prasad.k@kairostech.com");
      		 email.addCc("bhasha.k@kairostech.com");
+		email.addTo("durgaprasad.b@kairostech.com");
+		email.addCc("mounika.t@kairostech.com");
+		
   	       // email.addCc("kmahaboobbhasha@gmail.com");
-  	       email.addCc("pranathi.g@kairostech.com");
+  	       // email.addCc("pranathi.g@kairostech.com");
 		
   
   	     //   email.addTo("mahaboobbhasha17@gmail.com");
-	email.addTo("durgaprasad.b@kairostech.com");
+	
 
              // Send the email
              email.send();
