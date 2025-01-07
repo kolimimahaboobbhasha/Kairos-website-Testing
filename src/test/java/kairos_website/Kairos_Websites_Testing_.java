@@ -22,6 +22,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -89,8 +90,8 @@ public class Kairos_Websites_Testing_ {
 //	    driver=new EdgeDriver();
 		// WebDriverManager.firefoxdriver().setup();
 		// driver=new FirefoxDriver();
-		// WebDriverManager.edgedriver().setup();
-		// driver=new EdgeDriver();
+//		WebDriverManager.edgedriver().setup();
+//		driver=new EdgeDriver();
 		driver.manage().window().maximize();
 		List<String> shuffledUrls = new ArrayList<>(List.of(urls));
 		Collections.shuffle(shuffledUrls);
