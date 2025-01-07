@@ -182,7 +182,7 @@ public class Kairos_Websites_Testing_ {
              HtmlEmail email = new HtmlEmail();
              email.setHostName("smtp.gmail.com"); // Set your SMTP server
              email.setSmtpPort(587); // Set your SMTP port
-             email.setAuthenticator(new DefaultAuthenticator("kmbb4578@gmail.com", "ntto lwsv rfwa plhk")); // Set your email credentials
+             email.setAuthenticator(new DefaultAuthenticator("kmbb4578@gmail.com", "mhch lpyv zjei snqg")); // Set your email credentials
              email.setSSLOnConnect(true); // Enable SSL (if required)
 
              email.setFrom("kmbb4578@gmail.com");
@@ -371,7 +371,7 @@ public class Kairos_Websites_Testing_ {
 		                HtmlEmail email = new HtmlEmail();
 		                email.setHostName("smtp.gmail.com");
 		                email.setSmtpPort(587);
-		                email.setAuthenticator(new DefaultAuthenticator("kmbb4578@gmail.com", "ntto lwsv rfwa plhk"));
+		                email.setAuthenticator(new DefaultAuthenticator("kmbb4578@gmail.com", "mhch lpyv zjei snqg"));
 		                email.setSSLOnConnect(true);
 	
 		                email.setFrom("kmbb4578@gmail.com");
