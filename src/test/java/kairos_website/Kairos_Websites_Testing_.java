@@ -247,7 +247,7 @@ public class Kairos_Websites_Testing_ {static WebDriver driver;
         email.addTo("durgaprasad.b@kairostech.com");
         email.addCc("mounika.t@kairostech.com");
         email.addTo("manzoore.m@kairostech.com");
-        email.addTo("ravikumar.p@kairostech.com");
+        // email.addTo("ravikumar.p@kairostech.com");
         email.send();
     }
 
