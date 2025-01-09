@@ -123,7 +123,7 @@ public class Kairos_Websites_Testing_ {static WebDriver driver;
         driver.manage().window().maximize();
         List<String> shuffledUrls = new ArrayList<>(List.of(urls));
         Collections.shuffle(shuffledUrls);
-        List<String> selectedUrls = shuffledUrls.subList(0, Math.min(shuffledUrls.size(), 3));
+        List<String> selectedUrls = shuffledUrls.subList(0, Math.min(shuffledUrls.size(), 30));
 
         StringBuilder htmlTable = new StringBuilder("<table border='2' style='border-collapse: collapse; border: 2px solid black;'>");
         htmlTable.append("<tr style='background:#068fc9;'>")
@@ -145,10 +145,10 @@ public class Kairos_Websites_Testing_ {static WebDriver driver;
             Assert.assertEquals(url, ActualURL);
             test.pass("Page loaded successfully");
 
-            WebElement acceptall = driver.findElement(By.xpath("//button[text() ='Accept All']"));
-            if (acceptall.isDisplayed()) {
-                acceptall.click();
-            }
+            // WebElement acceptall = driver.findElement(By.xpath("//button[text() ='Accept All']"));
+            // if (acceptall.isDisplayed()) {
+            //     acceptall.click();
+            // }
 
             // Check if warning text is present on the page
             String warningText = "Warning:"; // Adjust the warning text as needed
@@ -222,7 +222,7 @@ public class Kairos_Websites_Testing_ {static WebDriver driver;
         emailContent.append(htmlTable);
         email.setContent("Hi Team.\r\nKairos Website is Working Fine" + htmlTable, "text/html");
 
-        // email.addCc("bhasha.k@kairostech.com");
+        email.addCc("bhasha.k@kairostech.com");
         email.addTo("durgaprasad.b@kairostech.com");
         email.addCc("mounika.t@kairostech.com");
         // email.addTo("manzoore.m@kairostech.com");
