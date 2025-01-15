@@ -123,7 +123,7 @@ public class Kairos_Websites_Testing_ {static WebDriver driver;
         driver.manage().window().maximize();
         List<String> shuffledUrls = new ArrayList<>(List.of(urls));
         Collections.shuffle(shuffledUrls);
-        List<String> selectedUrls = shuffledUrls.subList(0, Math.min(shuffledUrls.size(), 30));
+        List<String> selectedUrls = shuffledUrls.subList(0, Math.min(shuffledUrls.size(), 54));
 
         StringBuilder htmlTable = new StringBuilder("<table border='2' style='border-collapse: collapse; border: 2px solid black;'>");
         htmlTable.append("<tr style='background:#068fc9;'>")
