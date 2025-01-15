@@ -101,6 +101,7 @@ public class Kairos_Websites_Testing_ {static WebDriver driver;
             "https://kairostech.com/jobs/senior-software-engineer/",
             "https://kairostech.com/jobs/senior-software-engineer-sdet/",
             "https://kairostech.com/jobs/marketing-manager/",
+             "https://klabs.kairostech.com/",
             "https://kairostech.com/jobs/react-developer/",
             "https://kairostech.com/jobs/practice-head/"
     };
